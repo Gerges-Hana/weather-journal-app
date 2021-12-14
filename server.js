@@ -4,6 +4,7 @@ const express =require('express');
 const bodyParser =require('body-parser');
 const { response } = require('express');
 const { request } = require('http');
+// add number of port  this is as any number
 const port = 1111;
 
 // Setup empty JS object to act as endpoint for all routes
@@ -23,31 +24,32 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Initialize the main project folder
+//use all folder in website folder
 app.use(express.static('website'));
-
 
 // Setup Server
 // this function is used to bind and listen the connections on the specified host and port.
 //when server running this function is called
 app.listen( port ,() =>{
-    console.log(`server Running : http://Localhost:${port}`);
-    console.log("hellow gerges");
+    console.log("Hi gerges");
+    console.log(`server Running : https://Localhost:${port}`);
     }
 );
 // get function to have data from server 
-app.get('/getAll ', (request , response) =>{
+// get route to server as server return the data needed 
+app.get('/getAll', (request , response) =>{
 response.send(projectData);
-}
-);
+});
 
 // post function to post of projectData that have {temp ,date, content }
+//  route to post the data from client to server  
 app.post('/postData',(request, response) =>{
-
-    projectData={
-
-        temp:request.body.temp,
-        date:request.body.date,
-        content:request.body.content
-    };
-    response.send(projectData);
+    // projectData={
+        // temp:request.body.temp,
+        // date:request.body.date,
+        // content:request.body.content
+    // };
+    // response.send(projectData);
+    projectData={...request.body};
+    response .end();
 });
