@@ -37,8 +37,8 @@ app.listen( port ,() =>{
 );
 // get function to have data from server 
 // get route to server as server return the data needed 
-app.get('/getAll ', (request , response) =>{
-response.send(projectData);
+app.get('/getAll', (request , response) =>{
+response.send(projectData).end();
 });
 
 // post function to post of projectData that have {temp ,date, content }
@@ -49,5 +49,7 @@ app.post('/postData',(request, response) =>{
         date:request.body.date,
         content:request.body.content
     };
-    response.send(projectData);
+    response.send(projectData).end();
+    // projectData={...request.body};
+    // response .end();
 });
