@@ -32,27 +32,19 @@ app.use(express.static('website'));
 //when server running this function is called
 app.listen( port ,() =>{
     console.log("Hi gerges");
-<<<<<<< HEAD
     console.log(`server Running : http://Localhost:${port}`);
-=======
-    console.log(`server Running : https://Localhost:${port}`);
->>>>>>> 00c4850b84d559c7bfa5e01796aa13541cf32cc0
     }
 );
 // get function to have data from server 
 // get route to server as server return the data needed 
 app.get('/getAll', (request , response) =>{
-<<<<<<< HEAD
 response.send(projectData).end();
-=======
-response.send(projectData);
->>>>>>> 00c4850b84d559c7bfa5e01796aa13541cf32cc0
 });
 
 // post function to post of projectData that have {temp ,date, content }
 //  route to post the data from client to server  
 app.post('/postData',(request, response) =>{
-<<<<<<< HEAD
+
     projectData={
         temp:request.body.temp,
         date:request.body.date,
@@ -61,14 +53,5 @@ app.post('/postData',(request, response) =>{
     response.send(projectData).end();
     // projectData={...request.body};
     // response .end();
-=======
-    // projectData={
-        // temp:request.body.temp,
-        // date:request.body.date,
-        // content:request.body.content
-    // };
-    // response.send(projectData);
-    projectData={...request.body};
-    response .end();
->>>>>>> 00c4850b84d559c7bfa5e01796aa13541cf32cc0
+
 });
