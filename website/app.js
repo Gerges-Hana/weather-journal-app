@@ -92,14 +92,14 @@ const postData = async function(Data){
 // update function to get datd from local server and push it in html badge 
 // select evre elemnt in thml and set the value matched it in  server 
 const updateUi = async function(){
-  const response = await fetch(`${Appurl}getAll`);
+  const response = await fetch(`/getAll`);
     try{
         response.json().then(Data=>{
 
         date.innerHTML=`Date : ${Data.date}`;
         temp.innerHTML=`Temperature :${ Data.temp}`;
         content.innerHTML=`Feel : ${Data.content}`;
-        console.log(Data);
+        // console.log(Data);
         console.log(response);
          });
     }catch(err){

@@ -93,7 +93,7 @@ input{
     text-align: center;
     display:block;
     height: 60px;
-    width: 320px;
+    margin-top: 10px;
     background:#f5f7f7;
     color: #131210;
     font-size: 20px;
